@@ -1,0 +1,38 @@
+/* MessagesComponent's private CSS styles */
+.messages-div{
+  padding: 10px;
+  border: 1px solid grey;
+  h2 {
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    padding: 10px;
+
+  }
+  button {
+    color: crimson;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    font-size: 20px;
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: hand;
+    color: #888;
+    margin-bottom: 12px;
+    &:hover {
+      background-color: #cfd8dc;
+    }
+    &:disabled {
+      background-color: #eee;
+      color: #aaa;
+      cursor: auto;
+    }
+}
+
+}
+   
+  
+ 
+  
+  
