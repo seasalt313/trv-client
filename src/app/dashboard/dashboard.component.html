@@ -1,11 +1,13 @@
-<h3>Top Hotels</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hotel of hotels" class="col-1-4" routerLink="/detail/{{hotel.id}}">
+<div class="top-hotels">
+  <h3>Recently Booked</h3>
+  <div class="grid grid-pad">
+    <a *ngFor="let hotel of hotels" class="col-1-4" routerLink="/detail/{{hotel.id}}">
 
-    <div class="module hotel">
-      <h4>{{hotel.name}}</h4>
-    </div>
-  </a>
+      <div class="module hotel">
+        <h3>{{hotel.name}}</h3>
+      </div>
+    </a>
+  </div>
 </div>
 
 <app-hotel-search></app-hotel-search>

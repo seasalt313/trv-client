@@ -1,12 +1,19 @@
-<app-messages>
-
-</app-messages>
-<div id="home-page" style="text-align:center">
-  <h1>{{title}}</h1>
-  <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <br>
-    <a routerLink="/hotels">Hotels</a>
-  </nav>
+<!-- <app-messages></app-messages> -->
+<div id="home-page">
+  <header>
+    <h1 id="logo"><a routerLink="/dashboard">B</a></h1>
+    <div class="nav">
+      <ul>
+        <li> <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li> <a routerLink="/hotels">Hotels</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <div class="hero">
+    <h1>{{title}}</h1>
+    <h2>Find the hotel that fits your needs</h2>
+  </div>
 </div>
 <router-outlet></router-outlet>

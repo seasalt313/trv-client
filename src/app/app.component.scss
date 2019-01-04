@@ -1,43 +1,77 @@
-
+@import "../styles.scss";
 #home-page {
-    padding: 30px;
-    border: 1px solid grey;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: $main-font;
+    background-color: $white-color;
+    text-align: center;
+    /* AppComponent's private CSS styles */
+    .hero {
+        padding: 100px;
+        border-bottom: 1px solid $darkest-color;
+        background: url('../assets/germany.jpg') no-repeat center center fixed;
+        background-size: cover;
+        h1 {
+            color: $white-color;
+            font-family: $header-font;
+            font-size: 60px;
+        }
+        h2 {
+            font-family: $header-font;
+            color: $light-color;
+        }
+    }
+    #logo {
+        float: left;
+        text-decoration: none;
+        font-size: 40px;
+        margin: 17px 0;
+        a {
+            text-decoration: none;
+        }
+    }
+    .nav {
+        ul {
+            list-style: none;
+            text-align: center;
+            border-bottom: 1px solid $darkest-color;
+            li {
+                font-family: $main-font;
+                font-size: 1.2em;
+                line-height: 40px;
+                height: 40px;
+                color: $darkest-color;
+                padding: 20px;
+                a {
+                    text-decoration: none;
+                    display: block;
+                    transition: .3s background-color;
+                    background-color: $white-color;
+                    color: $darkest-color;
+                    border: 1px solid $dark-color;
+                    border-radius: 4px;
+                    font-family: $main-font;
+                    &:hover {
+                        color: $white-color;
+                        background-color: $medium-color;
+                    }
+                    &.active {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
 }
 
-/* AppComponent's private CSS styles */
-h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
-  font-family: 'Unlock', cursive;
-
-}
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
-  font-family: 'Roboto', sans-serif;
-
-}
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
-
-}
-nav a:visited, a:link {
-  color: #607d8b;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #cfd8dc;
-}
-nav a.active {
-  color: #039be5;
+@media screen and (min-width: 600px) {
+    .nav li {
+        width: 120px;
+        border-bottom: none;
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+    }
+    .nav li {
+        display: inline-block;
+        margin-right: -4px;
+    }
 }

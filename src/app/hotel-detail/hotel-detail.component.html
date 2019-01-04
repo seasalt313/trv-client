@@ -1,14 +1,15 @@
 <div class="user-select" *ngIf="hotel">
-  <div>
-    <h2>
-      <img src="{{hotel.icon}}" alt=""> {{hotel.name || uppercase}} Details
-    </h2>
+  <div class="hotel-title">
+    <img src="{{hotel.icon}}" alt="Hotel">
+    <p class="hotel-details-name">{{hotel.name || uppercase}} Details</p>
   </div>
 
-  <div><span>id: </span>{{hotel.id}}</div>
-  <div><span>address: </span>{{hotel.address}}, {{hotel.city}}</div>
-  <div><span>country: </span>{{hotel.country}}</div>
-  <div><span>phone: </span>{{hotel.phone}}</div>
+  <div>
+    <div><span>Address: </span>{{hotel.address}}, {{hotel.city}}</div>
+    <div><span>Country: </span>{{hotel.country}}</div>
+    <div><span>Phone: </span>{{hotel.phone}}</div>
+  </div>
+
 
 
   <br>
