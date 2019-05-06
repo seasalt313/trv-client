@@ -1,10 +1,27 @@
-<div class="list">
-  <h2 class="list-title">My Hotels</h2>
-  <ul class="hotels">
-    <li *ngFor="let hotel of hotels">
-      <a routerLink="/detail/{{hotel.id}}">
-        <span class="badge">{{hotel.id}}</span> {{hotel.name}}
-      </a>
-    </li>
-  </ul>
+<!-- Nice to have: Was going to create a filter here
+<input [(ngModel)]="searchText" placeholder="enter search term here"> -->
+
+
+<div class="card" *ngFor="let hotel of hotels">
+  <div class="meta">
+    <!-- Used photo in assets, due to lack of quality images coming from faker -->
+    <div class="photo"><img src="../assets/hotel1.jpg" alt="{{hotel.name}}"></div>
+    <ul class="details">
+      <li class="tags">
+        <ul>
+          <li><a href="#">Book now!</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="description">
+    <h1>{{hotel.name}}</h1>
+    <h2>Address: {{hotel.address}}, {{hotel.city}}, {{hotel.country}}</h2>
+    <p> Contact: {{hotel.phone}}
+      <br>
+      Cost: {{hotel.cost}}
+      <p class="book-now">
+        <a href="#">Book now...</a>
+      </p>
+  </div>
 </div>

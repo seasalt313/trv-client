@@ -12,7 +12,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 
 export class HotelService {
-  private hotelsUrl = '  http://localhost:3000/hotels';
+  private hotelsUrl = 'http://localhost:3000/hotels';
 
 
   constructor(
@@ -39,15 +39,19 @@ export class HotelService {
   }
 
   /* GET hotels whose name contains search term */
-  searchHotels(term: string): Observable<Hotel[]> {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
+  searchHotels(city: string = '', country: string = ''): Observable<any> {
+
+    console.log('HELLOOOO ', city, country);
+
+    let cityParam = '';
+    let countryParam = '';
+    if (city !== '') {
+      cityParam = `city=${city}`;
     }
-    return this.http.get<Hotel[]>(`${this.hotelsUrl}/?country=${term}`).pipe(
-      tap(_ => this.log(`found hotels matching "${term}"`)),
-      catchError(this.handleError<Hotel[]>('searchHotels', []))
-    );
+    if (country !== '') {
+      countryParam = `country=${country}`;
+    }
+    return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}`);
   }
 
   private log(message: string) {
@@ -74,5 +78,7 @@ export class HotelService {
     };
   }
 }
+
+
 
 

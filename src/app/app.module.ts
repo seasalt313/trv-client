@@ -10,6 +10,8 @@ import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HotelSearchComponent } from './hotel-search/hotel-search.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { HotelSearchComponent } from './hotel-search/hotel-search.component';
     HotelDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HotelSearchComponent
+    HotelSearchComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

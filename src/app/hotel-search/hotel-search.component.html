@@ -1,11 +1,15 @@
 <div class="search-component">
-  <h3>Hotel Search</h3>
+  <div class="search-section">
+    <h3>Hotel Search</h3>
+    <input [(ngModel)]="city" class="searchTerm" placeholder="City" />
+    <input [(ngModel)]="country" class="searchTerm" placeholder="Country" />
+    <button type="submit" class="searchButton" (click)="searchHotels(city, country)">Search</button>
+  </div>
 
-  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
 
-  <ul class="search-result">
-    <li *ngFor="let hotel of hotels$ | async">
-      <a routerLink="/detail/{{hotel.id}}">
+  <ul class="search-result ">
+    <li *ngFor="let hotel of hotels$ | async ">
+      <a routerLink="/detail/{{hotel.id}} ">
         {{hotel.name}}
       </a>
     </li>

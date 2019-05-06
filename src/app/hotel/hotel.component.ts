@@ -8,7 +8,6 @@ import { HotelService } from '../hotel.service';
   styleUrls: ['./hotel.component.scss']
 })
 export class HotelComponent implements OnInit {
-
   hotels: Hotel[];
 
   constructor(private hotelService: HotelService) { }
@@ -20,6 +19,8 @@ export class HotelComponent implements OnInit {
   getHotels(): void {
     this.hotelService.getHotels()
       .subscribe(hotels => this.hotels = hotels);
-  }
 
+  }
 }
+
+

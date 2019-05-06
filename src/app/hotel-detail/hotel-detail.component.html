@@ -1,28 +1,22 @@
-<div class="user-select" *ngIf="hotel">
-  <div class="hotel-title">
-    <img src="{{hotel.icon}}" alt="Hotel">
-    <p class="hotel-details-name">{{hotel.name || uppercase}} Details</p>
+<button (click)="goBack()">go back</button>
+
+
+<div class="card" *ngIf="hotel">
+  <div class="meta">
+    <div class="photo"><img src="../assets/hotel1.jpg" alt="{{hotel.name}}"></div>
+  </div>
+  <div class="description">
+    <h1>{{hotel.name}}</h1>
+    <h2>Address: {{hotel.address}}, {{hotel.city}}, {{hotel.country}}</h2>
+    <p> Contact: {{hotel.phone}}
+      <br>
+      Cost: {{hotel.cost}}
+      <br>
+      Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ab quae earum minus, sint assumenda
+      facere alias, nemo iste, similique excepturi vitae recusandae voluptate maiores? Voluptatibus deserunt omnis ut
+      perspiciatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore cum, a rerum deserunt voluptatem,
+      ab, animi soluta ex earum quo cumque tenetur nam possimus tempora fugiat unde et id perspiciatis.
   </div>
 
-  <div>
-    <div><span>Address: </span>{{hotel.address}}, {{hotel.city}}</div>
-    <div><span>Country: </span>{{hotel.country}}</div>
-    <div><span>Phone: </span>{{hotel.phone}}</div>
-  </div>
 
-
-
-  <br>
-  <br>
-
-
-  <div>
-    <label>Type in hotel name:
-      <input [(ngModel)]="hotel.name" placeholder="name">
-    </label>
-  </div>
-  <br>
-  <br>
-
-  <button (click)="goBack()">go back</button>
 </div>
