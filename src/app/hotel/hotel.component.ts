@@ -14,6 +14,8 @@ export class HotelComponent implements OnInit {
 
   ngOnInit() {
     this.getHotels();
+    console.log('hotels here ', this);
+
   }
 
   getHotels(): void {
@@ -21,6 +23,7 @@ export class HotelComponent implements OnInit {
       .subscribe(hotels => this.hotels = hotels);
 
   }
+
 }
 
 

@@ -1,9 +1,17 @@
 <div class="search-component">
   <div class="search-section">
-    <h3>Hotel Search</h3>
+    <h3>Search by: </h3>
+    <div id="price-category">
+      <h4>Price Category</h4>
+      <select [(ngModel)]="price_category">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
     <input [(ngModel)]="city" class="searchTerm" placeholder="City" />
     <input [(ngModel)]="country" class="searchTerm" placeholder="Country" />
-    <button type="submit" class="searchButton" (click)="searchHotels(city, country)">Search</button>
+    <button type="submit" class="searchButton" (click)="searchHotels(city, country, price_category)">Search</button>
   </div>
 
 
@@ -12,6 +20,9 @@
       <a routerLink="/detail/{{hotel.id}} ">
         {{hotel.name}}
       </a>
+      <!-- <img src="{{hotel.image}}" alt="{{hotel.name}}"> -->
+      <p>{{hotel.price_category}}</p>
+      <p>{{hotel.amenities}}</p>
     </li>
   </ul>
 </div>

@@ -29,8 +29,10 @@ export class HotelSearchComponent implements OnInit {
 
   }
 
-  searchHotels(city: string, country: string) {
-    this.hotels$ = this.hotelService.searchHotels(city, country);
+  searchHotels(city: string, country: string, price_category: string) {
+    this.hotels$ = this.hotelService.searchHotels(city, country, price_category);
+    console.log(price_category);
+
   }
 
 }

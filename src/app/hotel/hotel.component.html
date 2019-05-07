@@ -5,7 +5,7 @@
 <div class="card" *ngFor="let hotel of hotels">
   <div class="meta">
     <!-- Used photo in assets, due to lack of quality images coming from faker -->
-    <div class="photo"><img src="../assets/hotel1.jpg" alt="{{hotel.name}}"></div>
+    <div class="photo"><img src="{{hotel.image}}" alt="{{hotel.name}}"></div>
     <ul class="details">
       <li class="tags">
         <ul>

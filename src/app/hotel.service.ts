@@ -39,24 +39,54 @@ export class HotelService {
   }
 
   /* GET hotels whose name contains search term */
-  searchHotels(city: string = '', country: string = ''): Observable<any> {
+  // searchHotels(city: string = '', country: string = ''): Observable<any> {
 
-    console.log('HELLOOOO ', city, country);
+
+  //   let cityParam = '';
+  //   let countryParam = '';
+  //   if (city !== '') {
+  //     cityParam = `city=${city}`;
+  //   }
+  //   if (country !== '') {
+  //     countryParam = `country=${country}`;
+  //   }
+  //   return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}`);
+  // }
+
+  // private log(message: string) {
+  //   this.messageService.add(`HotelService: ${message}`);
+  // }
+
+  searchHotels(
+    city: string = '',
+    country: string = '',
+    price_category: string = '',
+
+  ): Observable<any> {
+
 
     let cityParam = '';
     let countryParam = '';
+    let priceCat = '';
     if (city !== '') {
       cityParam = `city=${city}`;
     }
     if (country !== '') {
       countryParam = `country=${country}`;
     }
-    return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}`);
+
+    if (price_category !== '') {
+      priceCat = `price_category=${price_category}`;
+    }
+
+    return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}&${priceCat}`);
   }
 
   private log(message: string) {
     this.messageService.add(`HotelService: ${message}`);
   }
+
+
 
   /**
  * Handle Http operation that failed.
