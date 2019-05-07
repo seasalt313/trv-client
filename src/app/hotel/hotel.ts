@@ -5,11 +5,7 @@ export class Hotel {
     distance_to_venue: number;
     rating: number;
     price_category: string;
-    ammenities: {
-        first: string;
-        second: string;
-        third: string;
-    };
+    ammenities: [string, string, string];
     address: string;
     city: string;
     country: string;

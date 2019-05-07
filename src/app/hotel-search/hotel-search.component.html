@@ -1,28 +1,61 @@
 <div class="search-component">
   <div class="search-section">
     <h3>Search by: </h3>
-    <div id="price-category">
-      <h4>Price Category</h4>
+
+    <div id="price-category-search">
+      <p>Price Category</p>
       <select [(ngModel)]="price_category">
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
       </select>
     </div>
+
+    <div id="rating-search">
+      <p>Search hotels with a rating of: </p>
+      <select [(ngModel)]="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
     <input [(ngModel)]="city" class="searchTerm" placeholder="City" />
     <input [(ngModel)]="country" class="searchTerm" placeholder="Country" />
-    <button type="submit" class="searchButton" (click)="searchHotels(city, country, price_category)">Search</button>
+    <button type="submit" class="searchButton"
+      (click)="searchHotels(city, country, price_category, rating)">Search</button>
+
+    <!-- Nice to have: Distance search, did not have enough time to complete this -->
+    <!-- <div id="distance-search">
+      <p>Search hotels within: </p>
+      <select [(ngModel)]="distance_to_venue">
+        <option value="50">50 meters</option>
+        <option value="100">100 meters</option>
+        <option value="150">150 meters</option>
+        <option value="200">200 meters</option>
+        <option value="250">250 meters</option>
+      </select>
+    </div> -->
+
   </div>
+</div>
 
-
-  <ul class="search-result ">
-    <li *ngFor="let hotel of hotels$ | async ">
-      <a routerLink="/detail/{{hotel.id}} ">
-        {{hotel.name}}
-      </a>
-      <!-- <img src="{{hotel.image}}" alt="{{hotel.name}}"> -->
-      <p>{{hotel.price_category}}</p>
-      <p>{{hotel.amenities}}</p>
-    </li>
-  </ul>
+<div class="card" *ngFor="let hotel of hotels$ | async ">
+  <div class="meta">
+    <div class="photo"><img src="{{hotel.image}}" alt="{{hotel.name}}"></div>
+  </div>
+  <div class="description">
+    <h1>{{hotel.name}}</h1>
+    <h2>Address: {{hotel.address}}, {{hotel.city}}, {{hotel.country}}</h2>
+    <p>Price Category: {{hotel.price_category}}</p>
+    <p>Amenities:
+      {{hotel.amenities}}
+      <p>Rating: {{hotel.rating}}</p>
+      <p>Distance to venue: {{hotel.distance_to_venue}}</p>
+      <p class="book-now">
+        <a routerLink="/detail/{{hotel.id}}">Book now...</a>
+      </p>
+  </div>
 </div>

@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Observable, Subject } from 'rxjs';
-
-import {
-  debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
-
 import { Hotel } from '../hotel/hotel';
 import { HotelService } from '../hotel.service';
 
@@ -29,11 +23,8 @@ export class HotelSearchComponent implements OnInit {
 
   }
 
-  searchHotels(city: string, country: string, price_category: string) {
-    this.hotels$ = this.hotelService.searchHotels(city, country, price_category);
-    console.log(price_category);
-
+  searchHotels(city: string, country: string, price_category: string, rating: number) {
+    this.hotels$ = this.hotelService.searchHotels(city, country, price_category, rating);
   }
-
 }
 

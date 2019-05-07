@@ -11,6 +11,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HotelSearchComponent } from './hotel-search/hotel-search.component';
 import { FooterComponent } from './footer/footer.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     MessagesComponent,
     DashboardComponent,
     HotelSearchComponent,
-    FooterComponent
+    FooterComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

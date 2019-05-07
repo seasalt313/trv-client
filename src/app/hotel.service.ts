@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -39,35 +38,21 @@ export class HotelService {
   }
 
   /* GET hotels whose name contains search term */
-  // searchHotels(city: string = '', country: string = ''): Observable<any> {
 
-
-  //   let cityParam = '';
-  //   let countryParam = '';
-  //   if (city !== '') {
-  //     cityParam = `city=${city}`;
-  //   }
-  //   if (country !== '') {
-  //     countryParam = `country=${country}`;
-  //   }
-  //   return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}`);
-  // }
-
-  // private log(message: string) {
-  //   this.messageService.add(`HotelService: ${message}`);
-  // }
 
   searchHotels(
     city: string = '',
     country: string = '',
     price_category: string = '',
-
+    rating: number
   ): Observable<any> {
 
 
     let cityParam = '';
     let countryParam = '';
     let priceCat = '';
+    let ratingParam = '';
+
     if (city !== '') {
       cityParam = `city=${city}`;
     }
@@ -79,7 +64,13 @@ export class HotelService {
       priceCat = `price_category=${price_category}`;
     }
 
-    return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}&${priceCat}`);
+    if (rating > 0) {
+      ratingParam = `rating=${rating}`;
+      console.log(rating);
+    }
+
+
+    return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}&${priceCat}&${ratingParam}`);
   }
 
   private log(message: string) {
