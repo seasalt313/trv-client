@@ -1,10 +1,11 @@
 <div class="search-component">
   <div class="search-section">
-    <h3>Search by: </h3>
+    <h3 id="caption">Use this search to find the hotel that fits your needs.</h3>
 
     <div id="price-category-search">
-      <p>Price Category</p>
+      <p>Search by price category:</p>
       <select [(ngModel)]="price_category">
+        <option></option>
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
@@ -14,6 +15,7 @@
     <div id="rating-search">
       <p>Search hotels with a rating of: </p>
       <select [(ngModel)]="rating">
+        <option></option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -21,9 +23,12 @@
         <option value="5">5</option>
       </select>
     </div>
+    <div id="location-search">
+      <p>Search by location: </p>
+      <input [(ngModel)]="city" class="searchTermInput" placeholder="City" />
+      <input [(ngModel)]="country" class="searchTermInput" placeholder="Country" />
+    </div>
 
-    <input [(ngModel)]="city" class="searchTerm" placeholder="City" />
-    <input [(ngModel)]="country" class="searchTerm" placeholder="Country" />
     <button type="submit" class="searchButton"
       (click)="searchHotels(city, country, price_category, rating)">Search</button>
 

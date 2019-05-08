@@ -6,16 +6,50 @@
 
 .search-component {
     text-align: center;
+    font-family: $main-font;
 
-}
+    #caption {
+        display: table-caption;
+    }
 
-.search-section {
-    display: inline-grid;
-    border: 2px solid grey;
-    border-radius: 4px;
-    padding: 40px;
-    margin: 40px;
+    #price-category-search,
+    #rating-search {
+        border-bottom: 1px solid $dark-color;
+        padding: 10px;
+        font-size: 20px;
+    }
 
+    select {
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        height: 34px;
+        width: 240px;
+        font-size: 14px;
+
+    }
+
+    .search-section {
+        display: inline-table;
+        border: 2px solid grey;
+        border-radius: 4px;
+        padding: 40px;
+        margin: 40px;
+
+        .searchTermInput {
+            padding: 15px;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+
+        button {
+            padding: 15px;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 20px;
+        }
+    }
 }
 
 .card {
