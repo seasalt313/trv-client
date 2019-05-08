@@ -10,8 +10,9 @@
       </li>
     </ul>
   </div>
-  <div class="description">
-    <button (click)=deleteHotel(hotel.id)>Delete</button>
+  <button id="deleteHotel" class="admin" (click)=deleteHotel(hotel.id)><i class="fas fa-trash-alt"></i></button>  
+  <div class="description"> 
+
     <h1>{{hotel.name}}</h1>
     <h2>Address: {{hotel.address}}</h2>
     <p>Price Category: {{hotel.price_category}}</p>
@@ -23,5 +24,7 @@
       <p class="book-now">
         <a routerLink="/detail/{{hotel.id}}">Get Details</a>
       </p>
+
+
   </div>
 </div>

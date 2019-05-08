@@ -33,6 +33,14 @@
     }
   }
 
+  #deleteHotel {
+    border: none;
+    height: 5px;
+    width: 5px;
+    z-index: 1;
+    background: transparent;
+  }
+
   .meta {
     position: relative;
     z-index: 0;
