@@ -1,3 +1,4 @@
+<!-- Search Component and Results -->
 <div class="search-component">
   <div class="search-section">
     <h3 id="caption">Use this search to find the hotel that fits your needs.</h3>
@@ -47,6 +48,7 @@
   </div>
 </div>
 
+<!-- Results of Search - Hotel Cards -->
 <div class="card" *ngFor="let hotel of hotels$ | async ">
   <div class="meta">
     <div class="photo"><img src="{{hotel.image}}" alt="{{hotel.name}}"></div>

@@ -1,57 +1,55 @@
 @import "../../styles.scss";
 
 .footer-distributed {
-    font-family: $main-font;
-    font-weight: 100 !important;
-    background-color: #625D6D;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    width: 100%;
-    text-align: left;
-    padding: 45px 50px;
-    margin-top: 80px;
+  font-family: $main-font;
+  font-weight: 100 !important;
+  background-color: #625d6d;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 45px 50px;
+  margin-top: 80px;
 }
 
 .footer-distributed .footer-left p {
-    color: $light-color;
-    font-size: 18px;
-    margin: 0;
+  color: $light-color;
+  font-size: 18px;
+  margin: 0;
 }
 
-/* Footer links */
-
+//Footer links
 .footer-distributed p.footer-links {
-    font-size: 18px;
-    color: #ffffff;
-    margin: 0 0 10px;
-    padding: 0;
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0;
 }
 
 .footer-distributed p.footer-links a {
-    display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color: inherit;
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
 
-    &:hover {
-        color: white;
-    }
+  &:hover {
+    color: white;
+  }
 }
 
-//responsive styles below
+//Responsive styles for footer
 @media (max-width: 600px) {
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    text-align: center;
+  }
 
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-right {
-        text-align: center;
-    }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
 
-    .footer-distributed .footer-right {
-        float: none;
-        margin: 0 auto 20px;
-    }
-
-    .footer-distributed .footer-left p.footer-links {
-        line-height: 1.8;
-    }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
 }

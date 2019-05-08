@@ -1,22 +1,20 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HotelComponent } from './hotel/hotel.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
-import { AccountComponent } from './account/account.component';
-
-
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HotelComponent } from "./hotel/hotel.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { HotelDetailComponent } from "./hotel-detail/hotel-detail.component";
+import { AccountComponent } from "./account/account.component";
 
 const routes: Routes = [
-  { path: 'hotels', component: HotelComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'account', component: AccountComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'detail/:id', component: HotelDetailComponent }
+  { path: "hotels", component: HotelComponent },
+  { path: "dashboard", component: DashboardComponent },
+  { path: "account", component: AccountComponent },
+  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "detail/:id", component: HotelDetailComponent }
 ];
 
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

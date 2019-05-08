@@ -1,10 +1,14 @@
+<!-- Top hotels dashboard feature -->
 <div class="top-hotels">
   <h3>Recently Booked</h3>
   <div class="grid grid-pad">
-    <a *ngFor="let hotel of hotels" class="col-1-4" routerLink="/detail/{{hotel.id}}">
-
+    <a
+      *ngFor="let hotel of hotels"
+      class="col-1-4"
+      routerLink="/detail/{{ hotel.id }}"
+    >
       <div class="module hotel">
-        <h3>{{hotel.name}}</h3>
+        <h3>{{ hotel.name }}</h3>
       </div>
     </a>
   </div>

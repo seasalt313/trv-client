@@ -1,53 +1,65 @@
+<!-- Go back -->
 <button (click)="goBack()">Back</button>
 
-
+<!-- Hotel Info -->
 <div class="card" *ngIf="hotel">
   <div class="meta">
-    <div class="photo"><img src="{{hotel.image}}" alt="{{hotel.name}}"></div>
+    <div class="photo">
+      <img src="{{ hotel.image }}" alt="{{ hotel.name }}" />
+    </div>
   </div>
   <div class="description">
-    <h1>{{hotel.name}}</h1>
-    <h2>Address: {{hotel.address}}</h2>
-    <h3>Distance to venue: {{hotel.distance_to_venue}} </h3>
-    <h4>Rating: {{hotel.rating}} </h4>
-    <h5>Price Category: {{hotel.price_category}} </h5>
-    <h5>Popular Amenities: {{hotel.amenities}} </h5>
-    <p> Contact: {{hotel.phone}}
-      <br>
-      <br>
-      Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ab quae earum minus, sint assumenda
-      facere alias, nemo iste, similique excepturi vitae recusandae voluptate maiores? Voluptatibus.
+    <h1>{{ hotel.name }}</h1>
+    <h2>Address: {{ hotel.address }}</h2>
+    <h3>Distance to venue: {{ hotel.distance_to_venue }}</h3>
+    <h4>Rating: {{ hotel.rating }}</h4>
+    <h5>Price Category: {{ hotel.price_category }}</h5>
+    <h5>Popular Amenities: {{ hotel.amenities }}</h5>
+    <p>
+      Contact: {{ hotel.phone }}
+      <br />
+      <br />
+      Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+      ab quae earum minus, sint assumenda facere alias, nemo iste, similique
+      excepturi vitae recusandae voluptate maiores? Voluptatibus.
+    </p>
   </div>
 </div>
 
+<!-- Rooms available -->
 <div class="section group" *ngIf="hotel">
   <div class="col span_1_of_3">
-    <h2>{{hotel.room1.name}}</h2>
-    <h4>Max Occupancy: {{hotel.room1.max_occupancy}}</h4>
-    <h4>Price: {{hotel.room1.price_in_usd}} </h4>
-    <h5>Description: {{hotel.room1.description}} </h5>
+    <h2>{{ hotel.room1.name }}</h2>
+    <h4>Max Occupancy: {{ hotel.room1.max_occupancy }}</h4>
+    <h4>Price: {{ hotel.room1.price_in_usd }}</h4>
+    <h5>Description: {{ hotel.room1.description }}</h5>
     <button (click)="confirmed(hotel.room1.name)">
-      Book Now</button>
+      Book Now
+    </button>
   </div>
   <div class="col span_1_of_3">
-    <h2>{{hotel.room2.name}}</h2>
-    <h4>Max Occupancy: {{hotel.room2.max_occupancy}}</h4>
-    <h4>Price: {{hotel.room2.price_in_usd}} </h4>
-    <h5>Description: {{hotel.room2.description}} </h5>
+    <h2>{{ hotel.room2.name }}</h2>
+    <h4>Max Occupancy: {{ hotel.room2.max_occupancy }}</h4>
+    <h4>Price: {{ hotel.room2.price_in_usd }}</h4>
+    <h5>Description: {{ hotel.room2.description }}</h5>
     <button (click)="confirmed(hotel.room2.name)">
       Book Now
     </button>
   </div>
   <div class="col span_1_of_3">
-    <h2>{{hotel.room3.name}}</h2>
-    <h4>Max Occupancy: {{hotel.room3.max_occupancy}}</h4>
-    <h4>Price: {{hotel.room3.price_in_usd}} </h4>
-    <h5>Description: {{hotel.room3.description}} </h5>
+    <h2>{{ hotel.room3.name }}</h2>
+    <h4>Max Occupancy: {{ hotel.room3.max_occupancy }}</h4>
+    <h4>Price: {{ hotel.room3.price_in_usd }}</h4>
+    <h5>Description: {{ hotel.room3.description }}</h5>
     <button (click)="confirmed(hotel.room3.name)">
       Book Now
     </button>
   </div>
 </div>
 
-<!-- Confirmation of room booking toast -->
-<div id="confirmed">Confirmed! You will be staying in the {{name}}! Thank you for booking with us.</div>
+<!-- Confirmation Toast -->
+<div id="confirmed">
+  <h3>Confirmed!</h3>
+  <h3>You will be staying in the {{ name }}!</h3>
+  <h4>Thank you for booking with us.</h4>
+</div>

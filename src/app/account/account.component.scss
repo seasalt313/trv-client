@@ -1,33 +1,30 @@
 @import "../../styles.scss";
 
 h1 {
-    text-align: center;
-    font-family: $main-font;
-
+  text-align: center;
+  font-family: $main-font;
 }
 
 #account-page {
+  font-family: $main-font;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px;
+
+  #account-avatar,
+  #account-info {
     font-family: $main-font;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
 
-    #account-avatar,
-    #account-info {
-        font-family: $main-font;
-        width: 100%;
-        text-align: center;
-        padding: 20px;
+  #account-avatar img {
+    border-radius: 40%;
+  }
 
-    }
-
-    #account-avatar img {
-        border-radius: 40%;
-    }
-
-
-    #account-info {
-        border-left: 3px solid $darkest-color;
-        text-align: left;
-    }
+  #account-info {
+    border-left: 3px solid $darkest-color;
+    text-align: left;
+  }
 }

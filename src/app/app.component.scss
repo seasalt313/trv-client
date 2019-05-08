@@ -1,103 +1,102 @@
+/* AppComponent's private CSS styles */
+
 @import "../styles.scss";
 
 #home-page {
-    font-family: $main-font;
-    background-color: $white-color;
-    text-align: center;
+  font-family: $main-font;
+  background-color: $white-color;
+  text-align: center;
 
-    /* AppComponent's private CSS styles */
-    .hero {
-        padding: 100px;
-        border-bottom: 1px solid $darkest-color;
-        background: url('../assets/germany.jpg') no-repeat center center fixed;
-        background-size: cover;
+  .hero {
+    padding: 100px;
+    border-bottom: 1px solid $darkest-color;
+    background: url("../assets/germany.jpg") no-repeat center center fixed;
+    background-size: cover;
 
-        h1 {
-            color: $white-color;
-            font-family: $header-font;
-            font-size: 60px;
-        }
-
-        h2 {
-            font-family: $header-font;
-            color: $light-color;
-        }
+    h1 {
+      color: $white-color;
+      font-family: $header-font;
+      font-size: 60px;
     }
 
-    #logo {
-        float: left;
-        text-decoration: none;
-        font-size: 40px;
-        margin: 17px 0;
+    h2 {
+      font-family: $header-font;
+      color: $light-color;
+    }
+  }
+
+  #logo {
+    float: left;
+    text-decoration: none;
+    font-size: 40px;
+    margin: 17px 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .nav {
+    display: inline-flex;
+    justify-content: space-evenly;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-family: $main-font;
+        font-size: 1.2em;
+        line-height: 40px;
+        height: 40px;
+        color: $darkest-color;
+        padding: 20px;
 
         a {
-            text-decoration: none;
+          text-decoration: none;
+          display: block;
+          transition: 0.3s background-color;
+          background-color: $white-color;
+          color: $darkest-color;
+          border: 1px solid $dark-color;
+          border-radius: 4px;
+          font-family: $main-font;
+
+          &:hover {
+            color: $white-color;
+            background-color: $medium-color;
+          }
+
+          &.active {
+            color: $white-color;
+          }
         }
+      }
     }
-
-    .nav {
-        display: inline-flex;
-        justify-content: space-evenly;
-
-
-        ul {
-            list-style: none;
-
-            li {
-                font-family: $main-font;
-                font-size: 1.2em;
-                line-height: 40px;
-                height: 40px;
-                color: $darkest-color;
-                padding: 20px;
-
-                a {
-                    text-decoration: none;
-                    display: block;
-                    transition: .3s background-color;
-                    background-color: $white-color;
-                    color: $darkest-color;
-                    border: 1px solid $dark-color;
-                    border-radius: 4px;
-                    font-family: $main-font;
-
-                    &:hover {
-                        color: $white-color;
-                        background-color: $medium-color;
-                    }
-
-                    &.active {
-                        color: $white-color;
-                    }
-                }
-            }
-        }
-    }
+  }
 }
 
 #account {
-    margin: 17px 0;
+  margin: 17px 0;
+  float: right;
+
+  #account-avatar img {
+    width: 15%;
+    border-radius: 50%;
     float: right;
-
-    #account-avatar img {
-        width: 15%;
-        border-radius: 50%;
-        float: right;
-
-    }
+  }
 }
 
 @media screen and (min-width: 600px) {
-    .nav li {
-        width: 120px;
-        border-bottom: none;
-        height: 50px;
-        line-height: 50px;
-        font-size: 1.4em;
-    }
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
 
-    .nav li {
-        display: inline-block;
-        margin-right: -4px;
-    }
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
 }

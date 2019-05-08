@@ -1,78 +1,80 @@
 @import "../../styles.scss";
 
+//Custom styles for top hotels dashboard
 .top-hotels {
+  h3 {
+    font-family: $main-font;
+    text-align: center;
+  }
+
+  .grid {
+    font-family: $main-font;
+    margin: 0;
+    padding: 10px;
+
+    a {
+      text-decoration: none;
+    }
+
+    *,
+    *:after,
+    *:before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
     h3 {
-        font-family: $main-font;
-        text-align: center;
+      font-family: $main-font;
+      position: relative;
     }
 
-    .grid {
-        font-family: $main-font;
-        margin: 0;
-        padding: 10px;
-
-        a {
-            text-decoration: none;
-        }
-
-        *,
-        *:after,
-        *:before {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        h3 {
-            font-family: $main-font;
-            position: relative;
-        }
-
-        .col-1-4 {
-            font-family: $main-font;
-            width: 25%;
-        }
-
-        .module {
-            font-family: $main-font;
-            text-align: center;
-            color: $medium-color;
-            border: 3px solid $medium-color;
-            height: 90px;
-            min-width: 90px;
-
-            &:hover {
-                background-color: $medium-color;
-                cursor: pointer;
-                color: $white-color;
-            }
-        }
+    .col-1-4 {
+      font-family: $main-font;
+      width: 25%;
     }
 
-    [class*='col-'] {
-        float: left;
-        padding-right: 20px;
-        padding-bottom: 20px;
-    }
+    .module {
+      font-family: $main-font;
+      text-align: center;
+      color: $medium-color;
+      border: 3px solid $medium-color;
+      height: 90px;
+      min-width: 90px;
 
-    [class*='col-']:last-of-type {
-        padding-right: 0;
+      &:hover {
+        background-color: $medium-color;
+        cursor: pointer;
+        color: $white-color;
+      }
     }
+  }
+
+  [class*="col-"] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  [class*="col-"]:last-of-type {
+    padding-right: 0;
+  }
 }
 
+//Responsive styling
 @media (max-width: 600px) {
-    .module {
-        font-size: 10px;
-        max-height: 75px;
-    }
+  .module {
+    font-size: 10px;
+    max-height: 75px;
+  }
 }
 
 @media (max-width: 1024px) {
-    .grid {
-        margin: 0;
-    }
+  .grid {
+    margin: 0;
+  }
 
-    .module {
-        min-width: 60px;
-    }
+  .module {
+    min-width: 60px;
+  }
 }

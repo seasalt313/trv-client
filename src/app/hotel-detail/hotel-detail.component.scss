@@ -1,256 +1,244 @@
-/* HeroDetailComponent's private CSS styles */
+// HotelDetailComponent's custom CSS styles
 
 @import "../../styles.scss";
 
 * {
-    box-sizing: border-box;
-    font-family: $main-font;
+  box-sizing: border-box;
+  font-family: $main-font;
 }
 
-
 .card {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem auto;
-    box-shadow: 0 3px 7px -1px rgba(#000, .1);
-    margin-bottom: 1.6%;
-    background: $white-color;
-    line-height: 1.4;
-    border-radius: 5px;
-    overflow: hidden;
-    z-index: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
+  margin-bottom: 1.6%;
+  background: $white-color;
+  line-height: 1.4;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
 
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+  }
+
+  .description {
+    padding: 1rem;
+    background: $white-color;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      line-height: 1;
+      margin: 0;
+      font-size: 1.7rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color_grey_dark;
+      margin-top: 5px;
+    }
+  }
+
+  p {
+    position: relative;
+    margin: 1rem 0 0;
+
+    &:first-of-type {
+      margin-top: 1.25rem;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        background: $dark-color;
+        width: 35px;
+        top: -0.75rem;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  //Responsive styling
+  @media (min-width: 640px) {
+    flex-direction: row;
+    max-width: 700px;
 
     .meta {
-        position: relative;
-        z-index: 0;
-        height: 200px;
+      flex-basis: 40%;
+      height: auto;
     }
-
-    .photo {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-size: cover;
-        background-position: center;
-        transition: transform .2s;
-    }
-
 
     .description {
-        padding: 1rem;
-        background: $white-color;
-        position: relative;
-        z-index: 1;
+      flex-basis: 60%;
 
-
-        h1 {
-            line-height: 1;
-            margin: 0;
-            font-size: 1.7rem;
-        }
-
-        h2 {
-            font-size: 1rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            color: $color_grey_dark;
-            margin-top: 5px;
-        }
+      &:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
     }
 
-    p {
-        position: relative;
-        margin: 1rem 0 0;
+    &.alt {
+      flex-direction: row-reverse;
 
-        &:first-of-type {
-            margin-top: 1.25rem;
-
-            &:before {
-                content: "";
-                position: absolute;
-                height: 5px;
-                background: $dark-color;
-                width: 35px;
-                top: -0.75rem;
-                border-radius: 3px;
-            }
+      .description {
+        &:before {
+          left: inherit;
+          right: -10px;
+          transform: skew(3deg);
         }
+      }
     }
-
-
-
-    //Responsive styling here
-    @media (min-width: 640px) {
-        flex-direction: row;
-        max-width: 700px;
-
-        .meta {
-            flex-basis: 40%;
-            height: auto;
-        }
-
-        .description {
-            flex-basis: 60%;
-
-            &:before {
-                transform: skewX(-3deg);
-                content: "";
-                background: #fff;
-                width: 30px;
-                position: absolute;
-                left: -10px;
-                top: 0;
-                bottom: 0;
-                z-index: -1;
-            }
-        }
-
-        &.alt {
-            flex-direction: row-reverse;
-
-            .description {
-                &:before {
-                    left: inherit;
-                    right: -10px;
-                    transform: skew(3deg)
-                }
-            }
-        }
-    }
+  }
 }
 
 .section {
-    clear: both;
-    padding: 0px;
-    margin: 0px;
-    font-family: $main-font;
-    background-image: url("/../assets/hotel2.jpg");
-    background-size: cover;
-
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+  font-family: $main-font;
+  background-image: url("/../assets/hotel2.jpg");
+  background-size: cover;
 }
 
 //Column setup
 .col {
-    display: block;
-    float: left;
-    margin: 1% 0 1% 1.6%;
-    box-shadow: 0 3px 7px -1px rgba(#000, .1);
-    padding: 20px;
-    background-color: white;
-
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
+  padding: 20px;
+  background-color: white;
 }
 
 //Group
 .group:before,
 .group:after {
-    content: "";
-    display: table;
+  content: "";
+  display: table;
 }
 
 .group:after {
-    clear: both;
+  clear: both;
 }
-
-
 
 //Grid of three
 .span_3_of_3 {
-    width: 100%;
+  width: 100%;
 }
 
 .span_2_of_3 {
-    width: 60%;
+  width: 60%;
 }
 
 .span_1_of_3 {
-    width: 31%;
+  width: 31%;
 }
-
 
 //Responsive styling here
 @media only screen and (max-width: 480px) {
-    .col {
-        margin: 1% 0 1% 0%;
-    }
+  .col {
+    margin: 1% 0 1% 0%;
+  }
 
-    .span_3_of_3,
-    .span_2_of_3,
-    .span_1_of_3 {
-        width: 100%;
-    }
+  .span_3_of_3,
+  .span_2_of_3,
+  .span_1_of_3 {
+    width: 100%;
+  }
 }
-
 
 //Styling for The TOAST, which shows confirmation - position it at the bottom and in the middle of the screen
 #confirmed {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
-    background-color: $darkest-color;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    border: 30px;
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: $darkest-color;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  border: 30px;
 }
 
 #confirmed.show {
-    visibility: visible;
-    -webkit-animation: fadein 2.15s, fadeout 2.15s 4.5s;
-    animation: fadein 2.15s, fadeout 2.15s 4.5s;
+  visibility: visible;
+  -webkit-animation: fadein 2.15s, fadeout 12.15s 18.5s;
+  animation: fadein 2.15s, fadeout 12.15s 18.5s;
 }
 
-//Animations to fade the snackbar in and out
+//Animations to fade the toast in and out
 @-webkit-keyframes fadein {
-    from {
-        top: 0;
-        opacity: 0;
-    }
+  from {
+    top: 0;
+    opacity: 0;
+  }
 
-    to {
-        top: 30px;
-        opacity: 1;
-    }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-    from {
-        top: 0;
-        opacity: 0;
-    }
+  from {
+    top: 0;
+    opacity: 0;
+  }
 
-    to {
-        top: 30px;
-        opacity: 1;
-    }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-    from {
-        top: 30px;
-        opacity: 1;
-    }
+  from {
+    top: 30px;
+    opacity: 1;
+  }
 
-    to {
-        top: 0;
-        opacity: 0;
-    }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-    from {
-        top: 30px;
-        opacity: 1;
-    }
+  from {
+    top: 30px;
+    opacity: 1;
+  }
 
-    to {
-        top: 0;
-        opacity: 0;
-    }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }

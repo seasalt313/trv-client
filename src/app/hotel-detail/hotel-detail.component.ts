@@ -1,15 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
 import { Hotel } from "../hotel/hotel";
-import { HotelService } from '../hotel.service';
+import { HotelService } from "../hotel.service";
 
 @Component({
-  selector: 'app-hotel-detail',
-  templateUrl: './hotel-detail.component.html',
-  styleUrls: ['./hotel-detail.component.scss']
+  selector: "app-hotel-detail",
+  templateUrl: "./hotel-detail.component.html",
+  styleUrls: ["./hotel-detail.component.scss"]
 })
 export class HotelDetailComponent implements OnInit {
   @Input() hotel: Hotel;
@@ -19,18 +19,17 @@ export class HotelDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private hotelService: HotelService,
     private location: Location
-  ) { }
+  ) {}
 
   //Initialization
   ngOnInit(): void {
-    this.getHotel()
+    this.getHotel();
   }
 
   //Get Hotel info, sends id to service
   getHotel(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.hotelService.getHotel(id)
-      .subscribe(hotel => this.hotel = hotel);
+    const id = +this.route.snapshot.paramMap.get("id");
+    this.hotelService.getHotel(id).subscribe(hotel => (this.hotel = hotel));
   }
 
   //Go back functionality on page
@@ -39,12 +38,12 @@ export class HotelDetailComponent implements OnInit {
   }
 
   //Toast to show the booking is confirmed
-  confirmed(roomName): void {
+  confirmed(name): void {
     var x = document.getElementById("confirmed");
     x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
-    this.name = roomName;
-
+    setTimeout(function() {
+      x.className = x.className.replace("show", "");
+    }, 10000);
+    this.name = name;
   }
-
 }
