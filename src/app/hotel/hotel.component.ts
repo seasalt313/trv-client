@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Hotel } from "./hotel";
 import { HotelService } from "../hotel.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-hotel",
@@ -9,15 +10,28 @@ import { HotelService } from "../hotel.service";
 })
 export class HotelComponent implements OnInit {
   hotels: Hotel[];
+  hotel: Hotel;
+  id;
 
-  constructor(private hotelService: HotelService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private hotelService: HotelService
+  ) {}
 
   ngOnInit() {
     this.getHotels();
-    console.log("hotels here ", this);
   }
 
   getHotels(): void {
     this.hotelService.getHotels().subscribe(hotels => (this.hotels = hotels));
+  }
+
+  deleteHotel(id) {
+    this.id = id;
+    console.log("id??", id);
+
+    this.hotelService.deleteHotel(this.id).subscribe(data => {
+      console.log("success");
+    });
   }
 }

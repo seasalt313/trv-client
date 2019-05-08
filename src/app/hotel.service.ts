@@ -40,6 +40,16 @@ export class HotelService {
   }
 
   /**
+   * Delete a hotel by ID
+   * @param id - Retrieve hotel by hotel id
+   */
+  deleteHotel(id: number): Observable<Hotel[]> {
+    const url = `${this.hotelsUrl}/${id}`;
+    return this.http.delete<Hotel[]>(url);
+    console.log("deleted");
+  }
+
+  /**
    * Search hotels by user input
    * @param city - search by city name
    * @param country - search by country name
