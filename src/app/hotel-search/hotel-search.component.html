@@ -53,14 +53,14 @@
   </div>
   <div class="description">
     <h1>{{hotel.name}}</h1>
-    <h2>Address: {{hotel.address}}, {{hotel.city}}, {{hotel.country}}</h2>
+    <h2>Address: {{hotel.address}}</h2>
     <p>Price Category: {{hotel.price_category}}</p>
     <p>Amenities:
       {{hotel.amenities}}
       <p>Rating: {{hotel.rating}}</p>
       <p>Distance to venue: {{hotel.distance_to_venue}}</p>
       <p class="book-now">
-        <a routerLink="/detail/{{hotel.id}}">Book now...</a>
+        <a routerLink="/detail/{{hotel.id}}">Get Details</a>
       </p>
   </div>
 </div>

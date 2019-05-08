@@ -18,3 +18,17 @@ body {
     margin: 0;
     padding: 0 30px;
 }
+
+button {
+    font-family: $main-font;
+    padding: 15px;
+    margin: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    outline: none;
+
+    &:hover {
+        background-color: $darkest-color;
+        color: white;
+    }
+}
