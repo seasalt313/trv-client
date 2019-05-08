@@ -13,7 +13,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class HotelService {
   private hotelsUrl = 'http://localhost:3000/hotels';
 
-
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
@@ -28,7 +27,7 @@ export class HotelService {
       );
   }
 
-  /** GET hotel by id. Will 404 if id not found */
+  /** GET hotel by id. */
   getHotel(id: number): Observable<Hotel> {
     const url = `${this.hotelsUrl}/${id}`;
     return this.http.get<Hotel>(url).pipe(
@@ -37,16 +36,14 @@ export class HotelService {
     );
   }
 
-  /* GET hotels whose name contains search term */
 
-
+  /* GET hotels where input contains search term */
   searchHotels(
     city: string = '',
     country: string = '',
     price_category: string = '',
     rating: number
   ): Observable<any> {
-
 
     let cityParam = '';
     let countryParam = '';
@@ -69,7 +66,6 @@ export class HotelService {
       console.log(rating);
     }
 
-
     return this.http.get(`${this.hotelsUrl}/?${cityParam}&${countryParam}&${priceCat}&${ratingParam}`);
   }
 
@@ -88,7 +84,6 @@ export class HotelService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption

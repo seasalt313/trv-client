@@ -13,6 +13,7 @@ import { HotelService } from '../hotel.service';
 })
 export class HotelDetailComponent implements OnInit {
   @Input() hotel: Hotel;
+  name;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,18 +21,30 @@ export class HotelDetailComponent implements OnInit {
     private location: Location
   ) { }
 
+  //Initialization
   ngOnInit(): void {
     this.getHotel()
   }
 
+  //Get Hotel info, sends id to service
   getHotel(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.hotelService.getHotel(id)
       .subscribe(hotel => this.hotel = hotel);
   }
 
+  //Go back functionality on page
   goBack(): void {
     this.location.back();
+  }
+
+  //Toast to show the booking is confirmed
+  confirmed(roomName): void {
+    var x = document.getElementById("confirmed");
+    x.className = "show";
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    this.name = roomName;
+
   }
 
 }

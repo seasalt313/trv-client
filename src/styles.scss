@@ -17,13 +17,15 @@ monospace;
 body {
     margin: 0;
     padding: 0 30px;
+    font-family: $main-font;
+
 }
 
 button {
     font-family: $main-font;
     padding: 15px;
     margin: 10px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 20px;
     outline: none;
 

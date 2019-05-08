@@ -6,12 +6,13 @@ import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
 import { AccountComponent } from './account/account.component';
 
 
+
 const routes: Routes = [
   { path: 'hotels', component: HotelComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'account', component: AccountComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'detail/:id', component: HotelDetailComponent },
+  { path: 'detail/:id', component: HotelDetailComponent }
 ];
 
 @NgModule({
