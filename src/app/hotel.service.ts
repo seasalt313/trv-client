@@ -53,27 +53,13 @@ export class HotelService {
    * TODO: Create a hotel
    */
   createHotel(newHotel: Hotel) {
-    console.log("in service: ", newHotel);
-
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     "Content-Type": "application/x-www-form-urlencoded",
-    //     Authorization: "my-auth-token"
-    //   })
-    // };
     let headers = new HttpHeaders({
       "Content-Type": "application/json",
-      Authorization: "some-token"
+      Authorization: "auth-token"
     });
     let options = { headers: headers };
-    let body = JSON.stringify(newHotel);
-    console.log("body?", newHotel);
-
     const url = `http://localhost:3000/hotels/`;
     return this.http.post(url, newHotel, options);
-    // .pipe(map((data: any) => JSON.parse(data)));
-
-    console.log("successful new hotel!");
   }
 
   /**

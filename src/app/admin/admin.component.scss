@@ -15,12 +15,24 @@
   display: grid;
   max-width: 900px;
   margin: auto;
-  input {
+  input,
+  select {
     font-family: $main-font;
     padding: 20px;
     font-size: 20px;
     border: none;
     border-bottom: 1px solid $color_grey_dark;
+  }
+  select {
+    margin: 20px;
+    p {
+      font-size: 20px;
+      text-align: left;
+    }
+    option {
+      font-size: 20px;
+      padding: 20px;
+    }
   }
 }
 

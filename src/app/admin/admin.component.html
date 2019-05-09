@@ -3,13 +3,39 @@
 <!-- Create hotel form -->
 <h2 class="admin"> Create Hotel: </h2>
 <form class="admin create-hotel" action="submit">
+  <!-- Hotel Name -->
     <input type="text" [(ngModel)]="name" name="name" placeholder="Name of hotel" />
+    <!-- Hotel Description -->
    <input type="text" [(ngModel)]="description" name="description" placeholder="Description" />
-    <input type="text" [(ngModel)]="price_category" name="price_category" placeholder="Price Category" />
-    <input type="text" [(ngModel)]="rating" name="rating" placeholder="Rating" />
-    <input type="text" [(ngModel)]="address" name="address" placeholder="Address" />
+   <!-- Hotel Street Address -->
+   <input type="text" [(ngModel)]="address" name="address" placeholder="Address" />
+   <!-- Hotel Distance to Venue -->
+   <input type="text" [(ngModel)]="distance" name="distance" placeholder="Distance to Venue?">
+   <br>
+   <!-- Hotel Price Category -->
+   <p>Price Category</p>
+   <select [(ngModel)]="price_category" name="price_category">
+     <option></option>
+     <option value="low">Low</option>
+     <option value="medium">Medium</option>
+     <option value="high">High</option>
+   </select>
+   <br>
+    <br>
+    <!-- Hotel Rating -->
+    <p>Rating</p>
+    <select [(ngModel)]="rating" name="rating" >
+        <option></option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select> 
+ 
 
-    <button (click)="createHotel(name, description, price_category, rating, address)">
+    <button (click)="createHotel(name, description, 
+    address, distance, price_category, rating)">
       Create new hotel
     </button>
   </form>
