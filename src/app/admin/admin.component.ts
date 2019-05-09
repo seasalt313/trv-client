@@ -23,9 +23,16 @@ export class AdminComponent implements OnInit {
 
   deleteHotel(id) {
     this.id = id;
-    this.hotelService.deleteHotel(this.id).subscribe(data => {
-      console.log("success");
-    });
+    this.hotelService.deleteHotel(this.id).subscribe(
+      data => {
+        // refresh list after deleting
+        this.getHotels();
+        return true;
+      },
+      error => {
+        console.error("Error deleting hotel. ", error);
+      }
+    );
   }
 
   // TODO: Finish create hotel
