@@ -1,9 +1,27 @@
-//Custom styling for Hotel Cards
+//Custom styling for Admin
 
 @import "../../styles.scss";
 
 * {
   box-sizing: border-box;
+}
+
+.admin {
+  text-align: center;
+}
+
+.create-hotel {
+  border-bottom: 4px solid $medium-color;
+  display: grid;
+  max-width: 900px;
+  margin: auto;
+  input {
+    font-family: $main-font;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid $color_grey_dark;
+  }
 }
 
 .card {
@@ -19,17 +37,15 @@
   overflow: hidden;
   z-index: 0;
 
-  a {
-    color: inherit;
-
+  #deleteHotel {
+    border: none;
+    font-size: 50px;
+    color: $medium-color;
+    z-index: 1;
+    text-align: center;
+    background: white;
     &:hover {
-      color: $light-color;
-    }
-  }
-
-  &:hover {
-    .photo {
-      transform: scale(1.3) rotate(3deg);
+      color: red;
     }
   }
 

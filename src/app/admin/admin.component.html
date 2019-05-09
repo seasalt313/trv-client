@@ -1,0 +1,41 @@
+<h1 class="admin">Hello Admin! Please create or delete a hotel below. </h1>
+
+<!-- Create hotel form -->
+<h2 class="admin"> Create Hotel: </h2>
+<form class="admin create-hotel" action="submit">
+    <input type="text" [(ngModel)]="name" name="name" placeholder="name" />
+    <input type="text" [(ngModel)]="city" name="city" placeholder="city" />
+    <input type="text" [(ngModel)]="description" name="desc" placeholder="desc" />
+    <button (click)="createHotel(name, city, description)">
+      Create new hotel
+    </button>
+  </form>
+
+  <!-- List of hotels, with ability to delete -->
+
+  <h2 class="admin delete-label">Delete one of the hotels below by clicking on trash can.</h2>
+
+<!-- Hotel Card -->
+<div class="card" *ngFor="let hotel of hotels">
+    <button id="deleteHotel" class="admin" (click)=deleteHotel(hotel.id)><i class="fas fa-trash-alt"></i></button>  
+    <div class="meta">
+      <div class="photo"><img src="{{hotel.image}}" alt="{{hotel.name}}"></div>
+    </div>
+
+    <div class="description"> 
+  
+      <h1>{{hotel.name}}</h1>
+      <h2>Address: {{hotel.address}}</h2>
+      <p>Price Category: {{hotel.price_category}}</p>
+      <p>Amenities:
+        {{hotel.amenities}}
+        <p>Rating: {{hotel.rating}}</p>
+        <p>Distance to venue: {{hotel.distance_to_venue}}</p>
+        <br>
+        <p class="book-now">
+          <a routerLink="/detail/{{hotel.id}}">Get Details</a>
+        </p>
+  
+  
+    </div>
+  </div>

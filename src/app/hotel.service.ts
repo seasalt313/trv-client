@@ -52,20 +52,20 @@ export class HotelService {
   /**
    * TODO: Create a hotel
    */
-  // createHotel(newHotel) {
-  //   console.log(newHotel);
+  createHotel(newHotel) {
+    console.log(newHotel);
 
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       "Content-Type": "application/json",
-  //       Authorization: "my-auth-token"
-  //     })
-  //   };
-  //   let body = JSON.stringify(newHotel);
-  //   const url = `${this.hotelsUrl}/${body}`;
-  //   return this.http.post(url, body, httpOptions);
-  //   console.log("successful new hotel!");
-  // }
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: "my-auth-token"
+      })
+    };
+    let body = JSON.stringify(newHotel);
+    const url = `${this.hotelsUrl}/${body}`;
+    return this.http.post(url, body, httpOptions);
+    console.log("successful new hotel!");
+  }
 
   /**
    * Search hotels by user input

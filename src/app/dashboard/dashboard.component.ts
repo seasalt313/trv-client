@@ -23,17 +23,4 @@ export class DashboardComponent implements OnInit {
       .getHotels()
       .subscribe(hotels => (this.hotels = hotels.slice(1, 5)));
   }
-
-  // TODO: Finish create hotel
-  // createHotel(nameParam, cityParam, descParam) {
-  //   let newHotel = {
-  //     id: 3,
-  //     name: nameParam,
-  //     city: cityParam,
-  //     description: descParam
-  //   };
-  //   this.hotelService
-  //     .createHotel(newHotel)
-  //     .subscribe(hotel => this.hotels.push(hotel));
-  // }
 }

@@ -12,6 +12,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HotelSearchComponent } from "./hotel-search/hotel-search.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AccountComponent } from "./account/account.component";
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AccountComponent } from "./account/account.component";
     DashboardComponent,
     HotelSearchComponent,
     FooterComponent,
-    AccountComponent
+    AccountComponent,
+    AdminComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
