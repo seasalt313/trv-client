@@ -36,15 +36,37 @@ export class AdminComponent implements OnInit {
   }
 
   // TODO: Finish create hotel
-  createHotel(nameParam, cityParam, descParam) {
-    let newHotel = {
-      id: 3,
-      name: nameParam,
-      city: cityParam,
-      description: descParam
-    };
-    this.hotelService
-      .createHotel(newHotel)
-      .subscribe(hotel => this.hotels.push(hotel));
+  createHotel(
+    nameParam,
+    descParam,
+    distanceParam,
+    ratingParam,
+    pricecatParam,
+    addressParam
+  ) {
+    const newHotel = new Hotel();
+    newHotel.id = 13;
+    newHotel.name = nameParam;
+    newHotel.description = descParam;
+    newHotel.distance_to_venue = distanceParam;
+    newHotel.rating = ratingParam;
+    newHotel.price_category = pricecatParam;
+    newHotel.address = addressParam;
+
+    console.log("newHotel? in controller", newHotel);
+
+    this.hotelService.createHotel(newHotel).subscribe(
+      hotel => {
+        console.log("inside, ", newHotel);
+
+        this.hotels.push(newHotel);
+        // refresh list after creating new hotel
+        this.getHotels();
+        return true;
+      },
+      error => {
+        console.error("Error creating hotel. ", error);
+      }
+    );
   }
 }

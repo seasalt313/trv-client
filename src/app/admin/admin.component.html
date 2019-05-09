@@ -3,10 +3,13 @@
 <!-- Create hotel form -->
 <h2 class="admin"> Create Hotel: </h2>
 <form class="admin create-hotel" action="submit">
-    <input type="text" [(ngModel)]="name" name="name" placeholder="name" />
-    <input type="text" [(ngModel)]="city" name="city" placeholder="city" />
-    <input type="text" [(ngModel)]="description" name="desc" placeholder="desc" />
-    <button (click)="createHotel(name, city, description)">
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Name of hotel" />
+   <input type="text" [(ngModel)]="description" name="description" placeholder="Description" />
+    <input type="text" [(ngModel)]="price_category" name="price_category" placeholder="Price Category" />
+    <input type="text" [(ngModel)]="rating" name="rating" placeholder="Rating" />
+    <input type="text" [(ngModel)]="address" name="address" placeholder="Address" />
+
+    <button (click)="createHotel(name, description, price_category, rating, address)">
       Create new hotel
     </button>
   </form>

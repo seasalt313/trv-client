@@ -52,18 +52,20 @@ export class HotelService {
   /**
    * TODO: Create a hotel
    */
-  createHotel(newHotel) {
-    console.log(newHotel);
+  createHotel(newHotel: Hotel) {
+    console.log("in service: ", newHotel);
 
     const httpOptions = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
         Authorization: "my-auth-token"
       })
     };
-    let body = JSON.stringify(newHotel);
-    const url = `${this.hotelsUrl}/${body}`;
-    return this.http.post(url, body, httpOptions);
+    // let body = JSON.stringify(newHotel);
+    console.log("body?", newHotel);
+
+    const url = `http://localhost:3000/hotels/`;
+    return this.http.post(url, newHotel, httpOptions);
     console.log("successful new hotel!");
   }
 
