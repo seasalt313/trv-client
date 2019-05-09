@@ -7,30 +7,26 @@ export class Hotel {
   price_category: string;
   ammenities: [string, string, string];
   address: string;
-  city: string;
-  country: string;
-  phone: string;
-  date: string;
   image: string;
   room1: {
     id: number;
     name: string;
     description: string;
     max_occupancy: number;
-    price_in_usd: string;
+    price_in_usd: number;
   };
   room2: {
     id: number;
     name: string;
     description: string;
     max_occupancy: number;
-    price_in_usd: string;
+    price_in_usd: number;
   };
   room3: {
     id: number;
     name: string;
     description: string;
     max_occupancy: number;
-    price_in_usd: string;
+    price_in_usd: number;
   };
 }

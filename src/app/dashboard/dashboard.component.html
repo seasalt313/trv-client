@@ -14,4 +14,13 @@
   </div>
 </div>
 
+<form class="admin" action="submit">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="name" />
+  <input type="text" [(ngModel)]="city" name="city" placeholder="city" />
+  <input type="text" [(ngModel)]="description" name="desc" placeholder="desc" />
+  <button (click)="createHotel(name, city, description)">
+    Create new hotel
+  </button>
+</form>
+
 <app-hotel-search></app-hotel-search>

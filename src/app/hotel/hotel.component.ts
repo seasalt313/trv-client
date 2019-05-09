@@ -28,8 +28,6 @@ export class HotelComponent implements OnInit {
 
   deleteHotel(id) {
     this.id = id;
-    console.log("id??", id);
-
     this.hotelService.deleteHotel(this.id).subscribe(data => {
       console.log("success");
     });

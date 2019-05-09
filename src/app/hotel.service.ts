@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Hotel } from "./hotel/hotel";
 import { Observable, of } from "rxjs";
 import { MessageService } from "./message.service";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
@@ -48,6 +48,24 @@ export class HotelService {
     return this.http.delete<Hotel[]>(url);
     console.log("deleted");
   }
+
+  /**
+   * TODO: Create a hotel
+   */
+  // createHotel(newHotel) {
+  //   console.log(newHotel);
+
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       "Content-Type": "application/json",
+  //       Authorization: "my-auth-token"
+  //     })
+  //   };
+  //   let body = JSON.stringify(newHotel);
+  //   const url = `${this.hotelsUrl}/${body}`;
+  //   return this.http.post(url, body, httpOptions);
+  //   console.log("successful new hotel!");
+  // }
 
   /**
    * Search hotels by user input

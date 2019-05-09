@@ -16,8 +16,6 @@
     <h5>Price Category: {{ hotel.price_category }}</h5>
     <h5>Popular Amenities: {{ hotel.amenities }}</h5>
     <p>
-      Contact: {{ hotel.phone }}
-      <br />
       <br />
       Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
       ab quae earum minus, sint assumenda facere alias, nemo iste, similique
@@ -31,7 +29,7 @@
   <div class="col span_1_of_3">
     <h2>{{ hotel.room1.name }}</h2>
     <h4>Max Occupancy: {{ hotel.room1.max_occupancy }}</h4>
-    <h4>Price: {{ hotel.room1.price_in_usd }}</h4>
+    <h4>Price: {{ hotel.room1.price_in_usd | currency: "" }}/night</h4>
     <h5>Description: {{ hotel.room1.description }}</h5>
     <button (click)="confirmed(hotel.room1.name)">
       Book Now
@@ -40,7 +38,7 @@
   <div class="col span_1_of_3">
     <h2>{{ hotel.room2.name }}</h2>
     <h4>Max Occupancy: {{ hotel.room2.max_occupancy }}</h4>
-    <h4>Price: {{ hotel.room2.price_in_usd }}</h4>
+    <h4>Price: {{ hotel.room2.price_in_usd | currency: "" }}/night</h4>
     <h5>Description: {{ hotel.room2.description }}</h5>
     <button (click)="confirmed(hotel.room2.name)">
       Book Now
@@ -49,7 +47,7 @@
   <div class="col span_1_of_3">
     <h2>{{ hotel.room3.name }}</h2>
     <h4>Max Occupancy: {{ hotel.room3.max_occupancy }}</h4>
-    <h4>Price: {{ hotel.room3.price_in_usd }}</h4>
+    <h4>Price: {{ hotel.room3.price_in_usd | currency: "" }}/night</h4>
     <h5>Description: {{ hotel.room3.description }}</h5>
     <button (click)="confirmed(hotel.room3.name)">
       Book Now
