@@ -45,7 +45,6 @@ export class AdminComponent implements OnInit {
     addressParam
   ) {
     const newHotel = new Hotel();
-    newHotel.id = 13;
     newHotel.name = nameParam;
     newHotel.description = descParam;
     newHotel.distance_to_venue = distanceParam;
@@ -58,7 +57,6 @@ export class AdminComponent implements OnInit {
     this.hotelService.createHotel(newHotel).subscribe(
       hotel => {
         console.log("inside, ", newHotel);
-
         this.hotels.push(newHotel);
         // refresh list after creating new hotel
         this.getHotels();
