@@ -26,30 +26,15 @@
 
 <!-- Rooms available -->
 <div class="section group" *ngIf="hotel">
-  <div class="col span_1_of_3">
-    <h2>{{ hotel.room1.name }}</h2>
-    <h4>Max Occupancy: {{ hotel.room1.max_occupancy }}</h4>
-    <h4>Price: {{ hotel.room1.price_in_usd | currency: "" }}/night</h4>
-    <h5>Description: {{ hotel.room1.description }}</h5>
-    <button (click)="confirmed(hotel.room1.name)">
-      Book Now
-    </button>
-  </div>
-  <div class="col span_1_of_3">
-    <h2>{{ hotel.room2.name }}</h2>
-    <h4>Max Occupancy: {{ hotel.room2.max_occupancy }}</h4>
-    <h4>Price: {{ hotel.room2.price_in_usd | currency: "" }}/night</h4>
-    <h5>Description: {{ hotel.room2.description }}</h5>
-    <button (click)="confirmed(hotel.room2.name)">
-      Book Now
-    </button>
-  </div>
-  <div class="col span_1_of_3">
-    <h2>{{ hotel.room3.name }}</h2>
-    <h4>Max Occupancy: {{ hotel.room3.max_occupancy }}</h4>
-    <h4>Price: {{ hotel.room3.price_in_usd | currency: "" }}/night</h4>
-    <h5>Description: {{ hotel.room3.description }}</h5>
-    <button (click)="confirmed(hotel.room3.name)">
+  <div
+    *ngFor="let room of hotel.rooms | arraySort: price_in_usd"
+    class="col span_1_of_3"
+  >
+    <h2>{{ room.name }}</h2>
+    <h4>Max Occupancy: {{ room.max_occupancy }}</h4>
+    <h4>Price: {{ room.price_in_usd | currency: "" }}/night</h4>
+    <h5>Description: {{ room.description }}</h5>
+    <button (click)="confirmed(hotel.room.name)">
       Book Now
     </button>
   </div>

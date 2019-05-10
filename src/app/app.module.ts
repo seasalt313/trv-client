@@ -13,6 +13,7 @@ import { HotelSearchComponent } from "./hotel-search/hotel-search.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AccountComponent } from "./account/account.component";
 import { AdminComponent } from './admin/admin.component';
+import { ArraySortPipe } from './-array-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminComponent } from './admin/admin.component';
     HotelSearchComponent,
     FooterComponent,
     AccountComponent,
-    AdminComponent
+    AdminComponent,
+    ArraySortPipe
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
