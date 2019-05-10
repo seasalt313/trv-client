@@ -1,7 +1,7 @@
 <!-- Confirmation of booked room and hotel -->
 
 <div class="confirmed" *ngIf="hotel">
-  <h1>CONFIRMED</h1>
+  <h1>CONFIRMED!!</h1>
   <div class="photo">
     <img src="{{ hotel.image }}" alt="{{ hotel.name }}" />
   </div>
@@ -10,8 +10,9 @@
     <h2>Address: {{ hotel.address }}</h2>
     <h3>Distance to venue: {{ hotel.distance_to_venue }}</h3>
     <div class="room-details">
-      <p>Room details:</p>
       <h2>You are booked for {{ room.name }}</h2>
+      <p>Room #: {{ room.id }}</p>
+      <p>Price: {{ room.price_in_usd | currency: "" }}/night</p>
       <h5>Description: {{ room.description }}</h5>
     </div>
   </div>

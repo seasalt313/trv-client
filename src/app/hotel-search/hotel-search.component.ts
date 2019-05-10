@@ -23,23 +23,11 @@ export class HotelSearchComponent implements OnInit {
 
   /**
    * Send params to hotelService
-   * @param city - search by city name
-   * @param country - search by country name
    * @param price_category - low, medium, high
    * @param rating - number value
    */
 
-  searchHotels(
-    city: string,
-    country: string,
-    price_category: string,
-    rating: number
-  ) {
-    this.hotels$ = this.hotelService.searchHotels(
-      city,
-      country,
-      price_category,
-      rating
-    );
+  searchHotels(price_category: string, rating: number) {
+    this.hotels$ = this.hotelService.searchHotels(price_category, rating);
   }
 }

@@ -62,29 +62,13 @@ export class HotelService {
 
   /**
    * Search hotels by user input
-   * @param city - search by city name
-   * @param country - search by country name
    * @param price_category - low, medium, high
    * @param rating - number value
    */
 
-  searchHotels(
-    city: string = "",
-    country: string = "",
-    price_category: string = "",
-    rating: number
-  ): Observable<any> {
-    let cityParam = "";
-    let countryParam = "";
+  searchHotels(price_category: string = "", rating: number): Observable<any> {
     let priceCat = "";
     let ratingParam = "";
-
-    if (city !== "") {
-      cityParam = `city=${city}`;
-    }
-    if (country !== "") {
-      countryParam = `country=${country}`;
-    }
 
     if (price_category !== "") {
       priceCat = `price_category=${price_category}`;
