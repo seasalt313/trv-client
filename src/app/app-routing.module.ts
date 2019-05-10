@@ -5,6 +5,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HotelDetailComponent } from "./hotel-detail/hotel-detail.component";
 import { AccountComponent } from "./account/account.component";
 import { AdminComponent } from "./admin/admin.component";
+import { ConfirmationComponent } from "./confirmation/confirmation.component";
 
 const routes: Routes = [
   { path: "hotels", component: HotelComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: "account", component: AccountComponent },
   { path: "", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "detail/:id", component: HotelDetailComponent },
-  { path: "admin", component: AdminComponent }
+  { path: "admin", component: AdminComponent },
+  { path: "confirmation/:id/:room", component: ConfirmationComponent }
 ];
 
 @NgModule({

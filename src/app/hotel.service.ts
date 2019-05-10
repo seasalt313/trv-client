@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Hotel } from "./hotel/hotel";
 import { Observable, of } from "rxjs";
 import { MessageService } from "./message.service";
-import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
@@ -10,6 +10,7 @@ import { catchError, map, tap } from "rxjs/operators";
 })
 export class HotelService {
   private hotelsUrl = "http://localhost:3000/hotels";
+  private confirmationUrl = "http://localhost:3000/hotels?rooms.id";
 
   constructor(
     private http: HttpClient,
@@ -40,13 +41,24 @@ export class HotelService {
   }
 
   /**
+   * Get a hotel by ID
+   * @param id - Retrieve hotel by hotel id
+   */
+  getRoomConfirmation(id: number): Observable<Hotel> {
+    const url = `${this.confirmationUrl}=${id}`;
+    return this.http.get<Hotel>(url).pipe(
+      tap(_ => this.log(`fetched room id=${id}`)),
+      catchError(this.handleError<Hotel>(`getRoom id=${id}`))
+    );
+  }
+
+  /**
    * Delete a hotel by ID
    * @param id - Retrieve hotel by hotel id
    */
   deleteHotel(id: number): Observable<Hotel[]> {
     const url = `${this.hotelsUrl}/${id}`;
     return this.http.delete<Hotel[]>(url);
-    console.log("deleted");
   }
 
   /**
@@ -70,23 +82,18 @@ export class HotelService {
    * @param rating - number value
    */
 
-  searchHotels(
-    city: string = "",
-    country: string = "",
-    price_category: string = "",
-    rating: number
-  ): Observable<any> {
-    let cityParam = "";
-    let countryParam = "";
+  searchHotels(price_category: string = "", rating: number): Observable<any> {
+    // let cityParam = "";
+    // let countryParam = "";
     let priceCat = "";
     let ratingParam = "";
 
-    if (city !== "") {
-      cityParam = `city=${city}`;
-    }
-    if (country !== "") {
-      countryParam = `country=${country}`;
-    }
+    // if (city !== "") {
+    //   cityParam = `city=${city}`;
+    // }
+    // if (country !== "") {
+    //   countryParam = `country=${country}`;
+    // }
 
     if (price_category !== "") {
       priceCat = `price_category=${price_category}`;
@@ -94,14 +101,9 @@ export class HotelService {
 
     if (rating > 0) {
       ratingParam = `rating=${rating}`;
-      console.log(rating);
     }
 
-    return this.http.get(
-      `${
-        this.hotelsUrl
-      }/?${cityParam}&${countryParam}&${priceCat}&${ratingParam}`
-    );
+    return this.http.get(`${this.hotelsUrl}/?${priceCat}&${ratingParam}`);
   }
 
   private log(message: string) {

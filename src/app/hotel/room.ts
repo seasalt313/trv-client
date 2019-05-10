@@ -1,4 +1,4 @@
-export class Rooms {
+export class Room {
   id: number;
   name: string;
   description: string;

@@ -34,9 +34,12 @@
     <h4>Max Occupancy: {{ room.max_occupancy }}</h4>
     <h4>Price: {{ room.price_in_usd | currency: "" }}/night</h4>
     <h5>Description: {{ room.description }}</h5>
-    <button (click)="confirmed(room.name)">
-      Book Now
-    </button>
+
+    <a
+      (click)="getRoomConfirmaton()"
+      routerLink="/confirmation/{{ hotel.id }}/{{ room.id }}"
+      >Book Now</a
+    >
   </div>
 </div>
 

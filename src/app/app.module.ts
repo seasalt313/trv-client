@@ -14,6 +14,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { AccountComponent } from "./account/account.component";
 import { AdminComponent } from './admin/admin.component';
 import { ArraySortPipe } from './-array-sort.pipe';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ArraySortPipe } from './-array-sort.pipe';
     FooterComponent,
     AccountComponent,
     AdminComponent,
-    ArraySortPipe
+    ArraySortPipe,
+    ConfirmationComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
