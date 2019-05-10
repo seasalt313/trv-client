@@ -13,7 +13,7 @@ import { ArraySortPipe } from "../-array-sort.pipe";
   styleUrls: ["./hotel-detail.component.scss"]
 })
 export class HotelDetailComponent implements OnInit {
-  @Input() hotel: Hotel;
+  hotel: Hotel;
   name;
 
   constructor(
