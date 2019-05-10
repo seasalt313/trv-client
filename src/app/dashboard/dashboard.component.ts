@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Hotel } from "../hotel/hotel";
 import { HotelService } from "../hotel.service";
-import { HotelComponent } from "../hotel/hotel.component";
 
 @Component({
   selector: "app-dashboard",
@@ -17,7 +16,7 @@ export class DashboardComponent implements OnInit {
     this.getHotels();
   }
 
-  //Get hotels
+  //Get hotels, showing a random 5
   getHotels(): void {
     this.hotelService
       .getHotels()

@@ -12,9 +12,9 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HotelSearchComponent } from "./hotel-search/hotel-search.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AccountComponent } from "./account/account.component";
-import { AdminComponent } from './admin/admin.component';
-import { ArraySortPipe } from './-array-sort.pipe';
-import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { AdminComponent } from "./admin/admin.component";
+import { ArraySortPipe } from "./-array-sort.pipe";
+import { ConfirmationComponent } from "./confirmation/confirmation.component";
 
 @NgModule({
   declarations: [

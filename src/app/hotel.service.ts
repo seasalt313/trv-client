@@ -3,14 +3,13 @@ import { Hotel } from "./hotel/hotel";
 import { Observable, of } from "rxjs";
 import { MessageService } from "./message.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { catchError, map, tap } from "rxjs/operators";
+import { catchError, tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
 })
 export class HotelService {
   private hotelsUrl = "http://localhost:3000/hotels";
-  private confirmationUrl = "http://localhost:3000/hotels?rooms.id";
 
   constructor(
     private http: HttpClient,
@@ -20,7 +19,6 @@ export class HotelService {
   /**
    * Get hotels from server
    */
-
   getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.hotelsUrl).pipe(
       tap(_ => this.log("fetched hotels")),
@@ -41,18 +39,6 @@ export class HotelService {
   }
 
   /**
-   * Get a hotel by ID
-   * @param id - Retrieve hotel by hotel id
-   */
-  getRoomConfirmation(id: number): Observable<Hotel> {
-    const url = `${this.confirmationUrl}=${id}`;
-    return this.http.get<Hotel>(url).pipe(
-      tap(_ => this.log(`fetched room id=${id}`)),
-      catchError(this.handleError<Hotel>(`getRoom id=${id}`))
-    );
-  }
-
-  /**
    * Delete a hotel by ID
    * @param id - Retrieve hotel by hotel id
    */
@@ -62,7 +48,7 @@ export class HotelService {
   }
 
   /**
-   * TODO: Create a hotel
+   Create a hotel
    */
   createHotel(newHotel: Hotel) {
     let headers = new HttpHeaders({
@@ -82,18 +68,23 @@ export class HotelService {
    * @param rating - number value
    */
 
-  searchHotels(price_category: string = "", rating: number): Observable<any> {
-    // let cityParam = "";
-    // let countryParam = "";
+  searchHotels(
+    city: string = "",
+    country: string = "",
+    price_category: string = "",
+    rating: number
+  ): Observable<any> {
+    let cityParam = "";
+    let countryParam = "";
     let priceCat = "";
     let ratingParam = "";
 
-    // if (city !== "") {
-    //   cityParam = `city=${city}`;
-    // }
-    // if (country !== "") {
-    //   countryParam = `country=${country}`;
-    // }
+    if (city !== "") {
+      cityParam = `city=${city}`;
+    }
+    if (country !== "") {
+      countryParam = `country=${country}`;
+    }
 
     if (price_category !== "") {
       priceCat = `price_category=${price_category}`;

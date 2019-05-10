@@ -4,8 +4,6 @@
   font-family: $main-font;
   font-weight: 100 !important;
   background-color: #625d6d;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
   width: 100%;
   text-align: left;
   padding: 45px 50px;
@@ -16,14 +14,6 @@
   color: $light-color;
   font-size: 18px;
   margin: 0;
-}
-
-//Footer links
-.footer-distributed p.footer-links {
-  font-size: 18px;
-  color: #ffffff;
-  margin: 0 0 10px;
-  padding: 0;
 }
 
 .footer-distributed p.footer-links a {
@@ -40,11 +30,11 @@
 //Responsive styles for footer
 @media (max-width: 600px) {
   .footer-distributed .footer-left,
-  .footer-distributed .footer-right {
+  .footer-distributed {
     text-align: center;
   }
 
-  .footer-distributed .footer-right {
+  .footer-distributed {
     float: none;
     margin: 0 auto 20px;
   }

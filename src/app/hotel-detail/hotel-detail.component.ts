@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from "@angular/core";
-
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { Hotel } from "../hotel/hotel";
@@ -32,18 +31,8 @@ export class HotelDetailComponent implements OnInit {
     this.hotelService.getHotel(id).subscribe(hotel => (this.hotel = hotel));
   }
 
-  //Go back functionality on page
+  //Go back
   goBack(): void {
     this.location.back();
-  }
-
-  //Toast to show the booking is confirmed
-  confirmed(name): void {
-    var x = document.getElementById("confirmed");
-    x.className = "show";
-    setTimeout(function() {
-      x.className = x.className.replace("show", "");
-    }, 10000);
-    this.name = name;
   }
 }

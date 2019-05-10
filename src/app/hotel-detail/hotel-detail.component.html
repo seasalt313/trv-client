@@ -14,7 +14,7 @@
     <h3>Distance to venue: {{ hotel.distance_to_venue }}</h3>
     <h4>Rating: {{ hotel.rating }}</h4>
     <h5>Price Category: {{ hotel.price_category }}</h5>
-    <h5>Popular Amenities: {{ hotel.amenities }}</h5>
+    <h5>Popular Amenities: {{ hotel.amenities || "Not listed" }}</h5>
     <p>
       <br />
       Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
@@ -35,11 +35,7 @@
     <h4>Price: {{ room.price_in_usd | currency: "" }}/night</h4>
     <h5>Description: {{ room.description }}</h5>
 
-    <a
-      (click)="getRoomConfirmaton()"
-      routerLink="/confirmation/{{ hotel.id }}/{{ room.id }}"
-      >Book Now</a
-    >
+    <a routerLink="/confirmation/{{ hotel.id }}/{{ room.id }}">Book Now</a>
   </div>
 </div>
 

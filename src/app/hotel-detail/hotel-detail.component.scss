@@ -131,8 +131,18 @@
   float: left;
   margin: 1% 0 1% 1.6%;
   box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
-  padding: 20px;
   background-color: white;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: $medium-color;
+  font-size: 22px;
+  &:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
 }
 
 //Group

@@ -22,7 +22,7 @@ export class ConfirmationComponent implements OnInit {
     this.getHotel();
   }
 
-  // localhost:3000/hotels?id=2&room=202
+  //Ex: localhost:3000/hotels?id=2&room=202
   //Get Hotel info, get room info, sends id to service
   getHotel(): void {
     const id = +this.route.snapshot.paramMap.get("id");
