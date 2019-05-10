@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from "@angular/core";
 
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
-
 import { Hotel } from "../hotel/hotel";
 import { HotelService } from "../hotel.service";
 import { ArraySortPipe } from "../-array-sort.pipe";

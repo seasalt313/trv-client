@@ -6,11 +6,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class ArraySortPipe implements PipeTransform {
   transform(array: any): any[] {
-    console.log("hello", array);
-
     if (!Array.isArray(array)) {
-      console.log("hello");
-
       return;
     }
     array.sort((a: any, b: any) => {

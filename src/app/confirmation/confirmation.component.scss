@@ -1,0 +1,20 @@
+//Custom styling for Hotel Cards
+
+@import "../../styles.scss";
+* {
+  width: 100%;
+  padding: 0;
+}
+
+.confirmed {
+  max-width: 60%;
+  margin: auto;
+
+  h1 {
+    text-align: center;
+  }
+  .room-details {
+    border-top: 1px solid black;
+    font-family: $main-font;
+  }
+}

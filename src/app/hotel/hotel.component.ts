@@ -11,7 +11,6 @@ import { ActivatedRoute } from "@angular/router";
 export class HotelComponent implements OnInit {
   hotels: Hotel[];
   hotel: Hotel;
-  id;
 
   constructor(
     private route: ActivatedRoute,

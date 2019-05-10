@@ -52,8 +52,6 @@ export class AdminComponent implements OnInit {
     newHotel.price_category = pricecatParam;
     newHotel.rating = ratingParam;
 
-    console.log("is this working", newHotel);
-
     this.hotelService.createHotel(newHotel).subscribe(
       hotel => {
         this.hotels.push(newHotel);
