@@ -1,70 +1,95 @@
-<h1 class="admin">Hello Admin! Please create or delete a hotel below. </h1>
+<h1 class="admin">Hello Admin! Please create or delete a hotel below.</h1>
 
 <!-- Create hotel form -->
-<h2 class="admin"> Create Hotel: </h2>
+<h2 class="admin">Create Hotel:</h2>
 <form class="admin create-hotel" action="submit">
   <!-- Hotel Name -->
-    <input type="text" [(ngModel)]="name" name="name" placeholder="Name of hotel" />
-    <!-- Hotel Description -->
-   <input type="text" [(ngModel)]="description" name="description" placeholder="Description" />
-   <!-- Hotel Street Address -->
-   <input type="text" [(ngModel)]="address" name="address" placeholder="Address" />
-   <!-- Hotel Distance to Venue -->
-   <input type="text" [(ngModel)]="distance" name="distance" placeholder="Distance to Venue?">
-   <br>
-   <!-- Hotel Price Category -->
-   <p>Price Category</p>
-   <select [(ngModel)]="price_category" name="price_category">
-     <option></option>
-     <option value="low">Low</option>
-     <option value="medium">Medium</option>
-     <option value="high">High</option>
-   </select>
-   <br>
-    <br>
-    <!-- Hotel Rating -->
-    <p>Rating</p>
-    <select [(ngModel)]="rating" name="rating" >
-        <option></option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-    </select> 
- 
+  <input
+    type="text"
+    [(ngModel)]="name"
+    name="name"
+    placeholder="Name of hotel"
+  />
+  <!-- Hotel Description -->
+  <input
+    type="text"
+    [(ngModel)]="description"
+    name="description"
+    placeholder="Description"
+  />
+  <!-- Hotel Street Address -->
+  <input
+    type="text"
+    [(ngModel)]="address"
+    name="address"
+    placeholder="Address"
+  />
+  <!-- Hotel Distance to Venue -->
+  <input
+    type="text"
+    [(ngModel)]="distance"
+    name="distance"
+    placeholder="Distance to Venue?"
+  />
+  <br />
+  <!-- Hotel Price Category -->
+  <p>Price Category</p>
+  <select [(ngModel)]="price_category" name="price_category">
+    <option></option>
+    <option value="low">Low</option>
+    <option value="medium">Medium</option>
+    <option value="high">High</option>
+  </select>
+  <br />
+  <br />
+  <!-- Hotel Rating -->
+  <p>Rating</p>
+  <select [(ngModel)]="rating" name="rating">
+    <option></option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
 
-    <button (click)="createHotel(name, description, 
-    address, distance, price_category, rating)">
-      Create new hotel
-    </button>
-  </form>
+  <button
+    (click)="
+      createHotel(name, description, address, distance, price_category, rating)
+    "
+  >
+    Create new hotel
+  </button>
+</form>
 
-  <!-- List of hotels, with ability to delete -->
+<!-- List of hotels, with ability to delete -->
 
-  <h2 class="admin delete-label">Delete one of the hotels below by clicking on trash can.</h2>
+<h2 class="admin delete-label">
+  Delete one of the hotels below by clicking on trash can.
+</h2>
 
 <!-- Hotel Card -->
 <div class="card" *ngFor="let hotel of hotels">
-    <button id="deleteHotel" class="admin" (click)=deleteHotel(hotel.id)><i class="fas fa-trash-alt"></i></button>  
-    <div class="meta">
-      <div class="photo"><img src="{{hotel.image}}" alt="{{hotel.name}}"></div>
-    </div>
-
-    <div class="description"> 
-  
-      <h1>{{hotel.name}}</h1>
-      <h2>Address: {{hotel.address}}</h2>
-      <p>Price Category: {{hotel.price_category}}</p>
-      <p>Amenities:
-        {{hotel.amenities}}
-        <p>Rating: {{hotel.rating}}</p>
-        <p>Distance to venue: {{hotel.distance_to_venue}}</p>
-        <br>
-        <p class="book-now">
-          <a routerLink="/detail/{{hotel.id}}">Get Details</a>
-        </p>
-  
-  
+  <button id="deleteHotel" class="admin" (click)="deleteHotel(hotel.id)">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+  <div class="meta">
+    <div class="photo">
+      <img src="{{ hotel.image }}" alt="{{ hotel.name }}" />
     </div>
   </div>
+
+  <div class="description">
+    <h1>{{ hotel.name }}</h1>
+    <h2>Address: {{ hotel.address }}</h2>
+    <p>Price Category: {{ hotel.price_category }}</p>
+    <p>Amenities: {{ hotel.amenities || "Not listed" }}</p>
+
+    <p>Rating: {{ hotel.rating }}</p>
+    <p>Distance to venue: {{ hotel.distance_to_venue }}</p>
+    <br />
+    <p class="book-now">
+      <a routerLink="/detail/{{ hotel.id }}">Get Details</a>
+    </p>
+  </div>
+</div>
